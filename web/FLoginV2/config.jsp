@@ -1,17 +1,26 @@
-<%-- 
-    Document   : config
-    Created on : 25 feb. 2026, 9:14:05 a. m.
-    Author     : elvis
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession sesion = request.getSession();
+
+    if (sesion.getAttribute("user")==null){
+        response.sendRedirect("login.jsp?error1=null");
+        return;
+    }
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Settings Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+
+        <%
+                out.println("<h1>Settings: " + sesion.getAttribute("user") + "</h1>");
+        %>
+        <a href="perfil.jsp">Back</a>
+        <br/>
+         <a href="logout.jsp">LogOut</a>
     </body>
 </html>
