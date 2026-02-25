@@ -17,5 +17,20 @@
             <br/>
             <button type="submit">Ingresar</button>
         </form>
+        <%
+        HttpSession sesion = request.getSession();
+        String error1 = request.getParameter("error1");
+        String error2 = request.getParameter("error2");
+        String error3 = request.getParameter("error3");
+        if(error1 != null){
+            out.print("<p style='color: red;'>Error 1: No puede acceder mediante url, use el login</p>");
+        }
+        if(error2 != null){
+            out.print("<p style='color: red;'>Error 2: Campos vacios, ingrese sus datos en el login </p>");
+        }
+        if(error3 != null){
+            out.print("<p style='color: red;'>Error 3: Contraseña incorrecta </p>");
+        }
+        %>
     </body>
 </html>

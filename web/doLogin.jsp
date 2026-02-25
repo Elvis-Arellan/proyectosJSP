@@ -18,7 +18,7 @@
             response.sendRedirect("index.jsp?login=succes");
             return;
         } else {
-            response.sendRedirect("login.jsp?error=password");
+            response.sendRedirect("login.jsp?error3=password");
             return;
         }
     } catch (Exception e) {

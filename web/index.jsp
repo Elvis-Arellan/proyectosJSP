@@ -1,9 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <%
     HttpSession sesion = request.getSession();
-    sesion.getAttribute("user");
     if(sesion.getAttribute("user")== null){
-        response.sendRedirect("login.jsp?erro1=nulls");
+        response.sendRedirect("login.jsp?error1=nulls");
         return;
     }
 %>
