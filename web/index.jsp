@@ -14,7 +14,7 @@
         <title>Principal Page</title>
     </head>
     <body>
-        <h1>Principal Page</h1>
+        <h1>Principal Page for <%= sesion.getAttribute("user")%></h1>
         <%
             String login = request.getParameter("login");
             out.println("<h2>Welcome: " + sesion.getAttribute("user") + "</h2>");
