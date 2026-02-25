@@ -4,11 +4,11 @@
     String user = request.getParameter("user");
     String password = request.getParameter("password");
     if(user == null || password == null){
-        response.sendRedirect("login.jsp?error=nulls");
+        response.sendRedirect("login.jsp?error1=nulls");
         return;
     }
     if(user.trim().isEmpty() || password.trim().isEmpty()){
-        response.sendRedirect("login.jsp?error=empty");
+        response.sendRedirect("login.jsp?error2=empty");
         return;
     }
     try {
