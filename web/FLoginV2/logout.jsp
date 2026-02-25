@@ -1,9 +1,3 @@
-<%-- 
-    Document   : logout
-    Created on : 25 feb. 2026, 9:14:16 a. m.
-    Author     : elvis
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
