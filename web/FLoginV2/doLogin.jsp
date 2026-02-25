@@ -3,7 +3,7 @@
     HttpSession sesion = request.getSession();
     String user = request.getParameter("user");
     String password = request.getParameter("password");
-
+    
     if (user == null || password == null) {
         response.sendRedirect("login.jsp?error1=null");
         return;

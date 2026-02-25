@@ -6,5 +6,5 @@
         return;
     }
     sesion.invalidate();
-    response.sendRedirect("login.jsp?logOut=true");
+    response.sendRedirect("login.jsp?logout=true");
 %>
