@@ -1,17 +1,27 @@
-<%-- 
-    Document   : doLogin
-    Created on : 25 feb. 2026, 9:13:51 a. m.
-    Author     : elvis
---%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
+<%
+    HttpSession sesion = request.getSession();
+    String user = request.getParameter("user");
+    String password = request.getParameter("password");
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+    if (user == null || password == null) {
+        response.sendRedirect("login.jsp?error1=null");
+        return;
+    }
+    if (user.trim().isEmpty() || password.trim().isEmpty()) {
+        response.sendRedirect("login.jsp?error2=empty");
+        return;
+    }
+    
+    
+    if ("admin".equals(password)) {
+        sesion.setAttribute("user", user);
+        response.sendRedirect("perfil.jsp?login=success");
+        return;
+    } else {
+        response.sendRedirect("login.jsp?error3=password");
+        return;
+    }
+
+
+%>
