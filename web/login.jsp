@@ -7,5 +7,15 @@
     </head>
     <body>
         <h1>Login</h1>
+        
+        <form method="POST" action="doLogin.jsp">
+            <lable>User</lable>
+            <input type="text" placeholder="user" name="user"/>
+            <br/>
+            <lable>Password</lable>
+            <input type="password" placeholder="Password" name="password"/>
+            <br/>
+            <button type="submit">Ingresar</button>
+        </form>
     </body>
 </html>
