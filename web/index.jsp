@@ -1,4 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
+<%
+    HttpSession sesion = request.getSession();
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,6 +10,11 @@
         <title>Principal Page</title>
     </head>
     <body>
+        <h1>Principal Page</h1>
+        <%
+        out.println("<h2 style='color: green;'>Welcome: "+sesion.getAttribute("user") +"</h2>");
         
+        %>
+        <a href="logout.jsp">LogOut</a>
     </body>
 </html>

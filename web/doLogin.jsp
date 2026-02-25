@@ -3,6 +3,14 @@
     HttpSession sesion = request.getSession();
     String user = request.getParameter("user");
     String password = request.getParameter("password");
+    if(user == null || password == null){
+        response.sendRedirect("login.jsp?error=nulls");
+        return;
+    }
+    if(user.trim().isEmpty() || password.trim().isEmpty()){
+        response.sendRedirect("login.jsp?error=empty");
+        return;
+    }
     try {
 
         if ("admin".equals(password)) {
@@ -18,15 +26,3 @@
     }
 
 %>
-
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>DoLogin Page</title>
-    </head>
-    <body>
-
-    </body>
-</html>
