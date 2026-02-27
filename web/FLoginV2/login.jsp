@@ -26,7 +26,7 @@
             String error3 = request.getParameter("error3");
             String logout = request.getParameter("logout");
             if(error1 != null){
-                out.print("<p Style='color: red;'>No se pueed acceder por url, use el login</p>");
+                out.print("<p Style='color: red;'>No se pueede acceder por url, use el login</p>");
             }
             if(error2 != null){
                 out.print("<p Style='color: red;'>Llene los campos</p>");
