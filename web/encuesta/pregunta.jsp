@@ -1,10 +1,18 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 
 <%
-    HttpSession sesion = request.getSession();
     String name = request.getParameter("txtName");
-    sesion.setAttribute("txtName", name);
-    String user = (String) sesion.getAttribute("txtName");
+     String userFinal;
+     
+    if (name != null) {
+        // Si el formulario envió algo (primera vez), lo guardamos
+        session.setAttribute("txtUser", name);
+        userFinal=name;
+    } else {
+         // Si es null (por refresh o botón atrás), lo buscamos en la sesión
+        userFinal = (String) session.getAttribute("txtUser");
+    }
+
 %>
 
 <!DOCTYPE html>
@@ -14,9 +22,10 @@
         <title>Asking...</title>
     </head>
     <body>
-        <h1><em Style='color: royalblue;'><%= user%>:</em> Please answer Our three Questions</h1>
+        <h1><em Style='color: royalblue;'><%= userFinal%>:</em> Please answer Our three Questions</h1>
         <p><strong>Where 1 is the lowest probability and 5 is the highest probability</strong></p>
-        <form action="resumen.jsp" method="">
+
+        <form action="resumen.jsp" method="POST">
             <label>#1 - What is the likelihood that you will recommend this course?</label>
             <br/>
             <input type="radio" name="radioUno" value="1">1
@@ -52,6 +61,6 @@
 
         <br/>
         <br/>
-        <a href="index.jsp">LogOut</a>
+        <a href="pregunta.jsp?salir=saliste">LogOut</a>
     </body>
 </html>

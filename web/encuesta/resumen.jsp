@@ -1,8 +1,8 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%
-    HttpSession sesion = request.getSession();
-    String name = (String) sesion.getAttribute("txtName");
-
+    
+    String name = (String) session.getAttribute("txtUser");
+    
 %>
 
 
@@ -14,15 +14,15 @@
     </head>
     <body>
         <h1><%= name%>: This is your Summary!</h1>
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         <a href="pregunta.jsp">See Questions</a>
         <br/>
         <br/>
-        <a href="index.jsp?logout=true">LogOut</a>
+        <a href="resumen.jsp?logout=true">LogOut</a>
     </body>
 </html>
