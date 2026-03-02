@@ -1,4 +1,12 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
+
+<%
+    HttpSession sesion = request.getSession();
+    String name = request.getParameter("txtName");
+    sesion.setAttribute("txtName", name);
+    String user = (String) sesion.getAttribute("txtName");
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,9 +14,8 @@
         <title>Asking...</title>
     </head>
     <body>
-        <h1>Please answer Our three Questions</h1>
+        <h1><em Style='color: royalblue;'><%= user%>:</em> Please answer Our three Questions</h1>
         <p><strong>Where 1 is the lowest probability and 5 is the highest probability</strong></p>
-        
         <form action="resumen.jsp" method="">
             <label>#1 - What is the likelihood that you will recommend this course?</label>
             <br/>
