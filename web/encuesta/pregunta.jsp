@@ -14,7 +14,14 @@
     }
 
 %>
-
+<%
+    String salir = request.getParameter("salir");
+    if("true".equals(salir)){
+        session.invalidate();
+        response.sendRedirect("index.jsp?salir=fromPregunta");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -61,6 +68,6 @@
 
         <br/>
         <br/>
-        <a href="pregunta.jsp?salir=saliste">LogOut</a>
+        <a href="pregunta.jsp?salir=true">LogOut</a>
     </body>
 </html>

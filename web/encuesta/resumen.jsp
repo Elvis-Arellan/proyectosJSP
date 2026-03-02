@@ -46,7 +46,14 @@
         ms1="Muy satisfecho";
     }
 %>
-
+<%
+     String logout = request.getParameter("logout");
+    if("true".equals(logout)){
+        session.invalidate();
+        response.sendRedirect("index.jsp?salir=fromResumen");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
