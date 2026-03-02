@@ -1,8 +1,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
 <%
-    HttpSession sesion = request.getSession();
-    ArrayList<String[]> carrito = (ArrayList<String[]>) sesion.getAttribute("carrito");
+ 
+    ArrayList<String[]> carrito = (ArrayList<String[]>) session.getAttribute("carrito");
 
     if (carrito == null) {
         carrito = new ArrayList<>();
@@ -11,7 +11,7 @@
 
     if ("true".equals(vaciar)) {
         carrito.clear();
-        sesion.setAttribute("carrito", carrito);
+        session.setAttribute("carrito", carrito);
         session.invalidate();
     }
 

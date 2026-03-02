@@ -1,9 +1,21 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
+    String salir = request.getParameter("salir");
+    if("true".equals(salir)){
+        session.invalidate();
+        response.sendRedirect("index.jsp?salir=true");
+        return;
+    }
     String name = request.getParameter("txtName");
-    String userFinal;
-
+    String login = request.getParameter("loginOk");
+    String userFinal;  
+    session.setAttribute("loginOk", login);
+    if(login == null){
+        response.sendRedirect("index.jsp?error2=true");
+        return;
+    }
+    
     if (name != null) {
         // Si el formulario es vacio o tiene valor
         session.setAttribute("txtUser", name);
@@ -12,15 +24,13 @@
         // Si es null (por refresh o botón atrás, porque se perdio el valor query del form), lo buscamos en la sesión
         userFinal = (String) session.getAttribute("txtUser");
     }
-
-%>
-<%
-    String salir = request.getParameter("salir");
-    if("true".equals(salir)){
-        session.invalidate();
-        response.sendRedirect("index.jsp?salir=fromPregunta");
+    
+    if(userFinal.isEmpty()){
+        response.sendRedirect("index.jsp?error1=true");
         return;
     }
+%>
+<%
 %>
 <!DOCTYPE html>
 <html>
@@ -65,7 +75,12 @@
             <br/>
             <button type="submit">see summary</button>
         </form>
-
+        <%
+            String error3 = request.getParameter("error3");
+            if("true".equals(error3)){
+                out.print("<p style='color: red;'>Seleccione un puntaje a cada pregunta</p>");
+            }
+        %>
         <br/>
         <br/>
         <a href="pregunta.jsp?salir=true">LogOut</a>
