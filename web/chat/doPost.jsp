@@ -3,15 +3,18 @@
 
 <%
     String chat = request.getParameter("chat");
+    String name = (String) session.getAttribute("user");
+     
 
     ArrayList<String> mensajes = (ArrayList<String>) application.getAttribute("mensajes");
+    
 
     if (mensajes == null) {
         mensajes = new ArrayList<>();
     }
 
     if (chat != null && !chat.trim().isEmpty()) {
-        mensajes.add(chat);
+        mensajes.add("User: "+name.toUpperCase() + ", dice: " + chat);
     }
 
     application.setAttribute("mensajes", mensajes);
