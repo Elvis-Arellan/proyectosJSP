@@ -3,5 +3,4 @@
     String user = request.getParameter("user");
     session.setAttribute("usuario", user);
     response.sendRedirect("score.jsp");
-    return;
 %>

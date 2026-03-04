@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Login - Ranking Score</h1>
-        <form action="doLogin.jsp" method="POST">
+        <form method="POST" action="doLogin.jsp" >
             <label>User: </label>
             <input name="user" type="text" placeholder="type your user"/>
             <button type="submit">LogIn</button>
