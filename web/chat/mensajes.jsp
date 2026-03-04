@@ -14,6 +14,6 @@
         %>
 
         <p><%= name%></p>
-        <p><%= mensajes%></p>
+        <p style='color: blue;'><%= mensajes%></p>
     </body>
 </html>
