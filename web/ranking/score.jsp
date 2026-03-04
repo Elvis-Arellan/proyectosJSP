@@ -13,7 +13,7 @@
         <p>Bienvenido <%= user%>, agregue su score</p>
         <form method="POST" action="doScore.jsp">
             <label>Score</label>
-            <input type="number" name="score" placeholder="add score" />
+            <input type="text" name="score" placeholder="add score" />
             <button type="submit">Add</button>   
         </form>
     </body>

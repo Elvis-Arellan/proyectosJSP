@@ -1,11 +1,17 @@
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%
+    String score = request.getParameter("score");
+    String user = (String) session.getAttribute("usuario");
+
+    ArrayList<String[]> ranking = (ArrayList<String[]>) application.getAttribute("score");
+    if (ranking == null) {
+        ranking = new ArrayList<>();
+    }
+    if(score!=null || !score.trim().isEmpty()){
+        ranking.add(new String[]{user,score});
+    }
+    application.setAttribute("ranking", ranking);
+    response.sendRedirect("showRanking.jsp");
+    return;
+%>
