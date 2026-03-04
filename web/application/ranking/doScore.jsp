@@ -4,7 +4,7 @@
     String score = request.getParameter("score");
     String user = (String) session.getAttribute("usuario");
 
-    ArrayList<String[]> ranking = (ArrayList<String[]>) application.getAttribute("score");
+    ArrayList<String[]> ranking = (ArrayList<String[]>) application.getAttribute("ranking");
     if (ranking == null) {
         ranking = new ArrayList<>();
     }

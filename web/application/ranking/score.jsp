@@ -7,13 +7,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add Score</title>
+        <style>
+            body{
+                background-color: burlywood;
+            }
+        </style>
     </head>
     <body>
         <h1>Add Score</h1>
         <p>Bienvenido <%= user%>, agregue su score</p>
         <form method="POST" action="doScore.jsp">
             <label>Score</label>
-            <input type="text" name="score" placeholder="add score" />
+            <input type="number" name="score" placeholder="add score" />
             <button type="submit">Add</button>   
         </form>
     </body>

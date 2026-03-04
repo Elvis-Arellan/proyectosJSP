@@ -4,6 +4,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
+        <style>
+            body{
+                background-color: burlywood;
+            }
+        </style>
     </head>
     <body>
         <h1>Login - Ranking Score</h1>
