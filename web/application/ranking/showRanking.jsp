@@ -44,14 +44,10 @@
             </tr>
             <%
                 double total = 0;
-                int i=0;
                 for (String[] elem : ranking) {
                     double rank = Double.parseDouble(elem[1]);
                     total += rank;
-                    double[] top = new double[6];
-                    top[i]=rank;
-                    i++;
-                    out.print(rank);
+                   
             %>
             <tr>
                 <td><%=elem[0]%></td>
