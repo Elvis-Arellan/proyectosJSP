@@ -14,20 +14,17 @@
         <h1>doConvert</h1>
 
 
-        <%            
-            double value = Double.parseDouble(request.getParameter("value"));
-            String choose = request.getParameter("choose");
-            double fa;
-            double ke;
-            if ("fa".equals(choose)) {
-                fa = (value * 1.8) + 32;
-                out.print("La conversion a Fa: " + fa);
-            } else if ("ke".equals(choose)) {
-                ke = value + 273.15;
-                out.print("La conversion a kelvin: " + ke);
-            }
+        <%
+            double monto = Double.parseDouble(request.getParameter("monto"));//10000
+            double interes = Double.parseDouble(request.getParameter("interes"));// 0.25 0.30
+            double years = Double.parseDouble(request.getParameter("year"));//12 24 72
+
+            double deudaTotal = (monto * interes) + monto;
+            double mensualidad = deudaTotal / years;
+            out.print("Deuda total: " + deudaTotal);
+            out.print("Pago mensual: " + mensualidad);
         %>
-        
+
         <a href="index.jsp">Volver</a>
     </body>
 </html>

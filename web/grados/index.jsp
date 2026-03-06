@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Index</title>
         <style>
-             body{
+            body{
                 background-color: rosybrown;
             }
         </style>
@@ -13,12 +13,21 @@
     <body>
         <h1>A convertir</h1>
         <form method="POST" action="doConvert.jsp">
-            <label>Ingrese temperatura en Celsius</label>
-            <input type="text" name="value"/>
+            <label>Prestamo bancario</label>
+            <input type="text" name="monto"/>
             <br/>
-            Fahrenheit <input type="radio" name="choose" value="fa"/>
+            10% <input type="radio" name="interes" value="10"/>
             <br/>
-            Kelvin<input type="radio" name="choose" value="ke"/>
+            25%<input type="radio" name="interes" value="0.25"/>
+            <br/>
+            30%<input type="radio" name="interes" value="0.30"/>
+            <br/>
+            <br/>
+            1 año<input type="radio" name="year" value="12"/>
+            <br/>
+            2 años<input type="radio" name="year" value="24"/>
+            <br/>
+            3 años<input type="radio" name="year" value="72"/>
             <br/>
             <br/>
             <button type="submit">Convertir</button>

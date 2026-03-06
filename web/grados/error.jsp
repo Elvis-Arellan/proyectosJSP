@@ -13,26 +13,36 @@
     <body>
         <h1>Error page</h1>
         <%
-            Integer errorPage = (Integer) application.getAttribute("capturarError");
-            if (errorPage == null) {
-                errorPage = 1;
+            Integer errorGlobal = (Integer) application.getAttribute("capturarError");
+            if (errorGlobal == null) {
+                errorGlobal = 1;
             } else {
-                errorPage++;
+                errorGlobal++;
             }
-            application.setAttribute("capturarError", errorPage);
+            application.setAttribute("capturarError", errorGlobal);
 
         %>
         <%            
-            Integer capturarError = (Integer) application.getAttribute("capturarError");
-
-            out.print("Cantidad de error capturados: " + capturarError);
+            out.print("Cantidad de errores Globales: " + errorGlobal);
             out.print("<br/>");
             out.print("<br/>");
+            
+            String clase = exception.getClass().getSimpleName();
 
-            out.print("El tipo de excepcion es: " + exception.getClass());
+            if ("NumberFormatException".trim().equals(clase)) {
+                out.print("El valor ingresado no es un número válido");
+            }else if("ArithmeticException".trim().equals(clase)){
+                out.print("Error matemático en el cálculo");
+            }else{
+                out.print("Error inesperado");
+            }
+
+
             out.print("<br/>");
             out.print("<br/>");
             out.print("El error es: " + exception.getMessage());
+
+
         %>
 
         <a href="index.jsp">Volver</a>
