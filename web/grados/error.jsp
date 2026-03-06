@@ -29,9 +29,9 @@
             
             String clase = exception.getClass().getSimpleName();
 
-            if ("NumberFormatException".trim().equals(clase)) {
+            if ("NumberFormatException".equals(clase)) {
                 out.print("El valor ingresado no es un número válido");
-            }else if("ArithmeticException".trim().equals(clase)){
+            }else if("ArithmeticException".equals(clase)){
                 out.print("Error matemático en el cálculo");
             }else{
                 out.print("Error inesperado");

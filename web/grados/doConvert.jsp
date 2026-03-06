@@ -15,14 +15,27 @@
 
 
         <%
-            double monto = Double.parseDouble(request.getParameter("monto"));//10000
-            double interes = Double.parseDouble(request.getParameter("interes"));// 0.25 0.30
-            double years = Double.parseDouble(request.getParameter("year"));//12 24 72
+            int monto = Integer.parseInt(request.getParameter("monto"));//10000
+            int interes = Integer.parseInt(request.getParameter("interes"));// 0.25 0.30
+            int years = Integer.parseInt(request.getParameter("year"));//12 24 72
 
-            double deudaTotal = (monto * interes) + monto;
-            double mensualidad = deudaTotal / years;
-            out.print("Deuda total: " + deudaTotal);
-            out.print("Pago mensual: " + mensualidad);
+            int deudaTotal = (monto * interes) + monto;
+            int mensualidad = deudaTotal / years;
+            
+            out.println("Monto: " + monto +" Soles");
+            out.println("<br/>");
+            out.println("interes: " + String.format("%.1f", (interes*100))+"%");
+            out.println("<br/>");
+            out.println("Años " + years+" meses");
+            out.println("<br/>");
+            
+            out.println("--------------------------------------------------------");
+            out.println("<br/>");
+            
+            out.println("Deuda total: " + deudaTotal+" Soles");
+            out.println("<br/>");
+            out.println("Pago mensual: " + String.format("%.2f", mensualidad)+" Soles");
+            out.println("<br/>");
         %>
 
         <a href="index.jsp">Volver</a>
