@@ -1,4 +1,4 @@
-<%@page import="java.util.ArrayList"%>
+<%@page  errorPage="error.jsp" import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String emailAdmin = (String) session.getAttribute("email");
@@ -14,9 +14,9 @@
         <h1>Admin <%= emailAdmin%></h1>
 
         <%
-            int count = 0;
+            out.print("Cantidad de tickets reportados: " + desc.size());
+           
             for (String[] elem : desc) {
-                count++;
                 out.print("<p>--------------------------------------------------------------------</p>");
                 out.print("<br/>");
                 out.print("Email: " + elem[0]);
@@ -25,7 +25,6 @@
                 out.print("<br/>");
                 out.print("<p>---------------------------------------------------------------------</p>");
             }
-            out.print("Cantidad de tickets reportados: " + count);
                 out.print("<br/>");
                 out.print("<br/>");
 

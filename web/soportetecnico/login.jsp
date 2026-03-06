@@ -25,5 +25,13 @@
             <br/>
             <button type="submit">Login</button>
         </form>
+        <%
+            String error1 = request.getParameter("error1");
+            if("true".equals(error1)){
+                %>
+                <p style="color: red;">Se accede solo por login</p>
+                <%
+            }
+        %>
     </body>
 </html>

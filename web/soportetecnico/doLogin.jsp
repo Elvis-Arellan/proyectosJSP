@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page errorPage="error.jsp" contentType="text/html" pageEncoding="UTF-8"%>
 <%
 //Necesito un sistema de soporte técnico simple. El usuario hace login, abre un ticket describiendo su problema, 
 //y puede ver todos sus tickets anteriores. admin ve todo email/descripcion.
@@ -9,6 +9,13 @@
     String passAdmin = "admin";
     String email = request.getParameter("email");
     String password = request.getParameter("password");
+    
+    //validation
+    
+    if(email == null){
+        response.sendRedirect("login.jsp?error1=true");
+    }
+    
     
     if ("admin@gmail.com".equals(email.toLowerCase().trim()) && "admin".equals(password.toLowerCase().trim())) {
         session.setAttribute("email", email);

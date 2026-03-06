@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page  errorPage="error.jsp" contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String email = (String) session.getAttribute("email");
 %>
