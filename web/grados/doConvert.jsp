@@ -1,4 +1,4 @@
-<%@page errorPage="error.jsp" contentType="text/html" pageEncoding="UTF-8"%>
+<%@page errorPage="error.jsp?error" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +12,9 @@
     </head>
     <body>
         <h1>doConvert</h1>
-        <%
+
+
+        <%            
             double value = Double.parseDouble(request.getParameter("value"));
             String choose = request.getParameter("choose");
             double fa;
@@ -25,6 +27,7 @@
                 out.print("La conversion a kelvin: " + ke);
             }
         %>
+        
         <a href="index.jsp">Volver</a>
     </body>
 </html>
