@@ -20,9 +20,11 @@
     if ("admin@gmail.com".equals(email.toLowerCase().trim()) && "admin".equals(password.toLowerCase().trim())) {
         session.setAttribute("email", email);
         response.sendRedirect("admin.jsp");
+        return;
     }else {
         session.setAttribute("email", email);
         response.sendRedirect("ticket.jsp");
+        return;
     }
     
 %>
