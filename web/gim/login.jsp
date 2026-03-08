@@ -21,5 +21,11 @@
     </head>
     <body>
         <h1>Login</h1>
+        <form action="doLogin.jsp">
+           user <input type="text" name="user"/>
+            peso<input type="text" name="peso"/>
+            altura<input type="text" name="altura"/>
+            <button type="submit">enviar</button>
+        </form>
     </body>
 </html>
